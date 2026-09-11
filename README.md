@@ -1,5 +1,5 @@
 # Soccor-System
-⚽ Soccer Management System (Java OOP)
+ Soccer Management System (Java OOP)
 A comprehensive, object-oriented Soccer Management System built in Java. The project simulates realistic football operations, including squad management, coach licensing, match simulation, disciplinary tracking, and dynamic league standings.
 
 🌟 Key Features
