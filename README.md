@@ -1,34 +1,54 @@
 # Soccor-System
- Soccer Management System (Java OOP)
-A comprehensive, object-oriented Soccer Management System built in Java. The project simulates realistic football operations, including squad management, coach licensing, match simulation, disciplinary tracking, and dynamic league standings.
+#  Soccer Management System
 
-🌟 Key Features
-Object-Oriented Design (OOP) & Polymorphism:
+![Java](https://img.shields.io/badge/Java-JDK_8%2B-orange?style=for-the-badge&logo=java)
+![OOP](https://img.shields.io/badge/Architecture-OOP_Principles-blue?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Completed-success?style=for-the-badge)
 
-Abstract Person base class extended by concrete Player and Coach subclasses.
+A robust, professional-grade **Soccer Management & Match Simulation System** built in Java. This application demonstrates core Object-Oriented Programming (OOP) concepts by managing 21+ players across pitch positions, coaching staff, real-time disciplinary logging, dynamic match results, and automated league standings.
 
-Polymorphic method execution via a unified Person[] collection.
+---
 
-Squad & Pitch Position Allocation:
+##  Table of Contents
+- [Key Features](#-key-features)
+- [OOP Architecture & Concepts](#-oop-architecture--concepts)
+- [Project Structure](#-project-structure)
+- [Installation & Usage](#-installation--usage)
+- [Match Simulation Scenario](#-match-simulation-scenario)
 
-Full squad setup covering explicit pitch roles (Goalkeeper, Defender, Midfielder, Forward).
+---
 
-Detailed roster inspection displaying player ages, attributes, and positions.
+##  Key Features
 
-Realistic Match Engine & Event Logging:
+* **Squad & Position Allocation**: Assigns up to 21 players with explicit pitch positions (`Goalkeeper`, `Defender`, `Midfielder`, `Forward`).
+* **Polymorphic Management**: Processes all participants using a unified abstract `Person[]` structure.
+* **Match Simulation Engine**: Handles match logic, goal tracking (scorer, minute, team), and automated winner determination.
+* **Disciplinary Action Tracking**: Issues and logs Yellow and Red cards per player in real-time.
+* **Analytics & Metrics**:
+  * **Player Fitness**: Calculates Body Mass Index (BMI) and health status.
+  * **Coach Salary**: Dynamically computes compensation based on experience years and UEFA licences (`UEFA Pro`, `UEFA A`, `UEFA B`).
+* **League Table & Standings**: Automatically awards points (Win: 3 pts, Draw: 1 pt, Loss: 0 pts) and prints updated league tables.
 
-Real-time goal tracking mapped to individual players, minutes, and teams via Goal.
+---
 
-Pitch discipline tracking handling yellow and red cards (receiveCard).
+##  OOP Architecture & Concepts
 
-Automatic winner determination and standings point distribution (3 points for a win, 1 for a draw).
+1. **Abstraction**: `Person.java` acts as an abstract base class defining core properties without direct instantiation.
+2. **Inheritance**: `Player.java` and `Coach.java` extend `Person.java`, inheriting core fields while introducing role-specific logic.
+3. **Polymorphism**: Dynamic method dispatch is showcased by running overridden methods (e.g., age validation logic) over a heterogeneous `Person[]` array.
+4. **Encapsulation**: Strict use of private attributes paired with clean getter and setter mutators.
 
-Player Fitness & Coach Analytics:
+---
 
-Body Mass Index (BMI) calculations and fitness status evaluations for players.
+##  Project Structure
 
-Coach total salary calculations based on UEFA licensing levels (UEFA Pro / A / B) and experience years.
-
-League Standings Table:
-
-Automated standings table generator summarizing team points, goals scored, and rankings via Schedule.
+```text
+src/soccor/
+├── Person.java      # Abstract base class for all league participants
+├── Player.java      # Player metrics, cards, goals, and BMI calculation
+├── Coach.java       # Experience tracking, UEFA licensing, and salary logic
+├── Team.java        # Roster container, coach association, and team goals
+├── Goal.java        # Goal event metadata (scorer, minute, team)
+├── Match.java       # Core engine for scoring, cards, and match outcomes
+├── Schedule.java    # League manager generating standings tables
+└── Soccor.java      # Main entry point driving the El Clásico match scenario
